@@ -46,7 +46,7 @@
     -v {{ mpath }}/{{item.org}}/peers/{{item.fullname}}/tls:/etc/hyperledger/fabric/tls
     -v {{ item.fullname }}:/var/hyperledger/production
     {{ container_options }}
-    hyperledger/fabric-peer:{{ fabric.release }} peer node start
+    030098010523.dkr.ecr.us-east-1.amazonaws.com/thufir-fabric-peer:latest peer node start
   with_items: "{{ allpeers }}"
   register: peerstat
   ignore_errors: yes
